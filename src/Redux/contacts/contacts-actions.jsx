@@ -1,23 +1,28 @@
 /* eslint-disable import/no-anonymous-default-export */
-import types from './contacts-types';
+import { createAction } from '@reduxjs/toolkit';
 
-const addContact = data => ({
-  type: types.ADD,
-  payload: data,
-});
+const addContact = createAction('contacts/add');
 
-const deleteContact = contactId => ({
-  type: types.DELETE,
-  payload: contactId,
-});
+const deleteContact = createAction('contacts/delete');
 
-const filter = value => ({
-  type: types.FILTER,
-  payload: value,
-});
+const filter = createAction('contacts/filter');
 
 export default {
   addContact,
   deleteContact,
   filter,
 };
+// const addContact = data => ({
+//   type: types.ADD,
+//   payload: data,
+// });
+
+// const deleteContact = contactId => ({
+//   type: types.DELETE,
+//   payload: contactId,
+// });
+
+// const filter = value => ({
+//   type: types.FILTER,
+//   payload: value,
+// });
